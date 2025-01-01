@@ -5,7 +5,8 @@
 
 typedef enum {
     Add,
-    Mul
+    Mul,
+    ReLU
 } OP;
 
 typedef struct Value {

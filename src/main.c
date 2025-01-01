@@ -12,10 +12,12 @@ int main() {
   val2->data = 1.0;
   val3->data = -3.0;
 
-  Value_t *val4 = mul(val1, val2);
+  val3 = mul(val1, val2);
+  Value_t *val4 = relu(val3);
 
   val4->grad = 1.0;
   val4->_backward(val4);
+  val3->_backward(val3);
 
   printf("val1.grad %.2f\n", val1->grad);
   printf("val2.grad %.2f\n", val2->grad);
